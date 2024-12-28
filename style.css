@@ -1,0 +1,145 @@
+/* Define CSS variables for light and dark themes */
+:root {
+    --background-color: #f8f9fa;
+    --text-color: #333;
+    --header-color: #007BFF;
+    --button-background: #007BFF;
+    --button-hover: #0056b3;
+    --table-header-background: #f4f4f4;
+    --table-row-hover: #f1f1f1;
+}
+
+body.dark-theme {
+    --background-color: #333;
+    --text-color: #f8f9fa;
+    --header-color: #1e90ff;
+    --button-background: #1e90ff;
+    --button-hover: #1c7ed6;
+    --table-header-background: #444;
+    --table-row-hover: #555;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+header h1 {
+    font-size: 2.5em;
+    color: var(--header-color);
+}
+
+#themeToggle {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    cursor: pointer;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+#filters {
+    margin: 20px 0;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+#filters input, #filters select, #filters button {
+    padding: 5px;
+    font-size: 14px;
+    transition: all 0.3s ease;
+}
+
+#filters button {
+    background-color: var(--button-background);
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+#filters button:hover {
+    background-color: var(--button-hover);
+}
+
+.chart-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    animation: fadeIn 1s ease-in-out;
+}
+
+.table-container {
+    margin: 20px 0;
+    animation: slideIn 1s ease-in-out;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+table th, table td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+table th {
+    background-color: var(--table-header-background);
+}
+
+table tbody tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+table tbody tr:hover {
+    background-color: var(--table-row-hover);
+    transition: background-color 0.3s ease;
+}
+
+/* New animations */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+input, select, button {
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+
+input:focus, select:focus, button:focus {
+    outline: none;
+    border-color: var(--header-color);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+}

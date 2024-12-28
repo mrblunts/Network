@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Network Traffic Monitor</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Network Traffic Monitoring Tool</h1>
+            <button id="themeToggle" aria-label="Toggle Theme">🌓</button>
+        </header>
+        <section id="filters">
+            <h2>Filters</h2>
+            <label for="protocolFilter">Protocol:</label>
+            <select id="protocolFilter">
+                <option value="All">All</option>
+                <option value="TCP">TCP</option>
+                <option value="UDP">UDP</option>
+                <option value="ICMP">ICMP</option>
+            </select>
+            <label for="ipFilter">IP Address:</label>
+            <input type="text" id="ipFilter" placeholder="Enter IP address">
+            <button id="applyFilter">Apply</button>
+        </section>
+        <section id="dashboard">
+            <div class="chart-container">
+                <canvas id="trafficChart"></canvas>
+            </div>
+            <div class="chart-container">
+                <canvas id="timeSeriesChart"></canvas>
+            </div>
+            <div class="table-container">
+                <h2>Recent Packets</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Time</th>
+                            <th>Source</th>
+                            <th>Destination</th>
+                            <th>Protocol</th>
+                            <th>Size (Bytes)</th>
+                        </tr>
+                    </thead>
+                    <tbody id="packetTableBody">
+                        <!-- Dynamic rows will be inserted here -->
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="./index.js"></script>
+    <script src="./theme-toggle.js"></script>
+</body>
+</html>
